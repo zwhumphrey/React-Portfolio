@@ -10,8 +10,8 @@ function Nav() {
     },
     { name: 'Resume', description: 'Link to resume' },
   ];
-  function categorySelected() {
-    console.log('hello');
+  function categorySelected(name) {
+    console.log(`${name} clicked`);
   }
   return (
     <header>
@@ -28,7 +28,9 @@ function Nav() {
           </li>
           {categories.map((category) => (
             <li className='mx-1' key={category.name}>
-              <span onClick={categorySelected}>{category.name}</span>
+              <span onClick={() => categorySelected(category.name)}>
+                {category.name}
+              </span>
             </li>
           ))}
         </ul>
