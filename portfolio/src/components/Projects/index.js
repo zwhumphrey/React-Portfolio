@@ -1,6 +1,5 @@
 import React from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
-import photo from '../../assets';
+import photo from '../../assets/runbuddy.png';
 
 function projects() {
   const currentCategory = {
@@ -9,12 +8,12 @@ function projects() {
   };
   return (
     <section>
-      <h1>{capitalizeFirstLetter(currentCategory.name)}</h1>
-      <p>{currentCategory.name}</p>
+      <h1>{currentCategory.name}</h1>
+      <p>Runbuddy</p>
       <div className='flex-row'>
         <img
           src={photo}
-          alt='Commercial Example'
+          alt='Runbuddy project'
           className='img-thumbnail mx-1'
         />
       </div>

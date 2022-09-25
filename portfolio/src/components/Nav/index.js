@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Nav() {
-  const categories = [
+  const [categories] = useState([
     { name: 'About', description: 'Photo of me and my about section' },
     { name: 'Contact', description: 'Infomation on where to contact me' },
     {
@@ -9,14 +9,15 @@ function Nav() {
       description: 'Links and photos of past projects',
     },
     { name: 'Resume', description: 'Link to resume' },
-  ];
-  function categorySelected(name) {
-    console.log(`${name} clicked`);
-  }
+  ]);
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
   return (
-    <header>
+    <header className='flex-row px-1'>
       <h2>
-        <a href='/'>Zac Guse-Humphrey</a>
+        <a data-testid='link' href='/'>
+          Zac Guse-Humphrey
+        </a>
       </h2>
       <nav>
         <ul className='flex-row'>
@@ -27,8 +28,17 @@ function Nav() {
             <span>Contact</span>
           </li>
           {categories.map((category) => (
-            <li className='mx-1' key={category.name}>
-              <span onClick={() => categorySelected(category.name)}>
+            <li
+              className={`mx-1 ${
+                currentCategory.name === category.name && 'navActive'
+              }`}
+              key={category.name}
+            >
+              <span
+                onClick={() => {
+                  setCurrentCategory(category);
+                }}
+              >
                 {category.name}
               </span>
             </li>
