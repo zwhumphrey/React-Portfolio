@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 import Nav from './components/Nav';
-import About from './components/About';
-import Projects from './components/Projects';
+// import AboutMe from './components/About';
+// import Portfolio from './components/Projects';
+import Tabs from './components/Tabs';
 
 function App() {
-  const [categories] = useState([
-    { name: 'About', description: 'Photo of me and my about section' },
+  const [tabs] = useState([
+    { name: 'AboutMe', description: 'Photo of me and my about section' },
     { name: 'Contact', description: 'Infomation on where to contact me' },
     {
-      name: 'Projects',
+      name: 'Portfolio',
       description: 'Links and photos of past projects',
     },
     { name: 'Resume', description: 'Link to resume' },
   ]);
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [currentTab, setCurrentTab] = useState(tabs[0]);
 
   return (
-    <div>
-      <Nav>
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-      </Nav>
+    <div className='content'>
+      <header>
+        <Nav
+          tabs={tabs}
+          currentTab={currentTab}
+          setCurrentTab={setCurrentTab}
+        ></Nav>
+      </header>
       <main>
-        <Projects></Projects>
-        <About></About>
+        <Tabs currentTab={currentTab}></Tabs>
       </main>
     </div>
   );

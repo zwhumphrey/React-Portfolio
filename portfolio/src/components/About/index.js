@@ -4,6 +4,7 @@ import coverImage from '../../assets/mexico.png';
 function About() {
   return (
     <section className='my-5'>
+      <h1>Zac Guse-Humphrey</h1>
       <img
         src={coverImage}
         className='my-2'
@@ -11,14 +12,10 @@ function About() {
         alt='cover'
       />
       <h1 id='about'>
-        {' '}
         I am a full stack web developer going through a coding bootcamp with the
         University of Minnesota!
       </h1>
     </section>
-    // <div>
-
-    // </div>
   );
 }
 
