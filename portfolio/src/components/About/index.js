@@ -11,10 +11,10 @@ function About() {
         style={{ width: '20%' }}
         alt='cover'
       />
-      <h1 id='about'>
+      <h4 id='about'>
         I am a full stack web developer going through a coding bootcamp with the
         University of Minnesota!
-      </h1>
+      </h4>
     </section>
   );
 }

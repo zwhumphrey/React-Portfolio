@@ -3,6 +3,7 @@ import TabContent from '../TabContent';
 import AboutMe from '../About';
 import Portfolio from '../Portfolio';
 import Contact from '../Contact';
+import Resume from '../Resume';
 
 function Tabs({ currentTab }) {
   const tabRender = () => {
@@ -13,6 +14,8 @@ function Tabs({ currentTab }) {
         return <Portfolio />;
       case 'Contact':
         return <Contact />;
+      case 'Resume':
+        return <Resume />;
       default:
         return <AboutMe />;
     }
