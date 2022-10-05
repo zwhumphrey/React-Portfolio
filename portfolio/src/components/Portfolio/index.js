@@ -7,7 +7,7 @@ const Portfolio = () => {
         <p>Workout Tracker</p>
         <a href='workout-tracker-app2.herokuapp.com/'>
           <img
-            src={require(`../../assets/workout-tracker`)}
+            src={require(`../../assets/workout-tracker.png`)}
             alt={`workout tracker`}
           />
         </a>
